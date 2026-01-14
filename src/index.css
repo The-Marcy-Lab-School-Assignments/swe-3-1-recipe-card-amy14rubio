@@ -1,16 +1,151 @@
-/* CSS Reset */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Scribble&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+@keyframes wave {
+  0%,
+  100% {
+    transform: translateY(2px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+:root {
+  --color-dark: rgb(183, 134, 95);
+  --color-light: rgb(231, 208, 182);
+  --color-bg-blend: rgb(187, 158, 136);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: var(--color-dark);
+  text-align: center;
+  transition: all 1s ease-in-out;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--color-light);
+  font-family: 'Sour Gummy', sans-serif;
+  font-weight: 600;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 3.5rem;
+  background-color: var(--color-dark);
+  list-style-type: none;
+}
+
+li a {
+  display: flex;
+  align-items: center;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  height: 100%;
+  padding: 0 2rem;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+
+h1 {
+  margin-top: 2rem;
+  font-family: 'Rubik Scribble', system-ui;
+  font-size: 4rem;
+  animation: wave 4s ease-in-out infinite;
+}
+
+h1:hover {
+  letter-spacing: 3px;
+}
+
+main {
+  display: block;
+  margin: 0 auto;
+  font-size: 1.2em;
+}
+
+#front-page {
+  width: 50vw;
+  margin-top: -4rem;
+}
+
+#front-page p {
+  margin-top: 25%;
+}
+
+#front-page p,
+#front-page figcaption {
+  padding: 10px 0;
+  text-align: right;
+}
+
+#front-page img {
+  width: 25vw;
+  float: left;
+  clip-path: circle(55% at 25% 65%);
+  shape-outside: circle(55% at 25% 65%);
+  shape-margin: 1rem;
+}
+
+#front-page img:hover,
+#front-page p:hover,
+#front-page figcaption:hover,
+.card li:hover {
+  transform: scale(1.05);
+}
+
+.card {
+  overflow: scroll;
+  width: 50vw;
+  height: 50vh;
+  background-color: var(--color-bg-blend);
+  background-image: url('https://i.pinimg.com/originals/d9/fe/7d/d9fe7da77a86635547ad1e7c71e5d74e.png');
+  background: no-repeat fixed cover;
+  background-blend-mode: multiply;
+  margin-top: 5%;
+  margin-inline: auto;
+  padding: 20px;
+  border-radius: 30px;
+  font-size: 1.25rem;
+  border: 1px dashed var(--color-light);
+}
+
+.card li {
+  color: var(--color-light);
+  text-align: left;
+  margin-left: 8%;
+  padding: 0.75rem;
 }
 
 ul {
-  list-style: none;
+  list-style-type: square;
 }
 
-img {
-  width: 100%;
+hr {
+  border-top: 1px dashed;
+  border-bottom: none;
+  width: 40%;
+  margin: 2rem auto;
 }
 
-/* Add your CSS below */
+a:hover {
+  color: rgb(101, 72, 2);
+}
+
+@media screen and (max-width: 1000px) {
+  #front-page {
+    margin-top: 0;
+  }
+  #front-page p {
+    margin-top: 10%;
+  }
+}
