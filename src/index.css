@@ -18,7 +18,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: var(--color-dark);
   text-align: center;
   transition: all 1s ease-in-out;
 }
@@ -26,10 +25,12 @@
 body {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  max-width: 100vw;
+  margin: auto;
   background-color: var(--color-light);
   font-family: 'Sour Gummy', sans-serif;
   font-weight: 600;
+  color: var(--color-dark);
 }
 
 nav ul {
@@ -39,6 +40,7 @@ nav ul {
   height: 3.5rem;
   background-color: var(--color-dark);
   list-style-type: none;
+  margin-bottom: 2rem;
 }
 
 li a {
@@ -47,6 +49,7 @@ li a {
   color: var(--color-light);
   background-color: var(--color-dark);
   height: 100%;
+  margin-right: 0; /*adding margin-right disrupts li:a hover design*/
   padding: 0 2rem;
   text-decoration: none;
 }
@@ -56,8 +59,11 @@ li a:hover {
   background-color: var(--color-light);
 }
 
+a {
+  color: var(--color-dark);
+}
+
 h1 {
-  margin-top: 2rem;
   font-family: 'Rubik Scribble', system-ui;
   font-size: 4rem;
   animation: wave 4s ease-in-out infinite;
@@ -69,41 +75,51 @@ h1:hover {
 
 main {
   display: block;
-  margin: 0 auto;
-  font-size: 1.2em;
+  margin: auto;
+  margin-bottom: 2rem;
 }
 
 #front-page {
-  width: 50vw;
-  margin-top: -4rem;
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 #front-page p {
-  margin-top: 25%;
-}
-
-#front-page p,
-#front-page figcaption {
-  padding: 10px 0;
   text-align: right;
+  font-size: 0.95rem;
+  padding: 1rem;
+  border-left: none; /* adding border-left disrupts design*/
 }
 
 #front-page img {
-  width: 25vw;
-  float: left;
-  clip-path: circle(55% at 25% 65%);
-  shape-outside: circle(55% at 25% 65%);
-  shape-margin: 1rem;
+  margin-bottom: 1rem;
+  clip-path: circle(55% at 30% 55%);
+}
+
+#front-page figure {
+  display: flex;
+  flex-direction: column;
+  max-width: 25vw;
 }
 
 #front-page img:hover,
 #front-page p:hover,
 #front-page figcaption:hover,
-.card li:hover {
+.ingredients-card li:hover,
+.instructions-card li:hover,
+h2:hover {
   transform: scale(1.05);
 }
 
-.card {
+#figcaption {
+  font-style: italic;
+}
+
+.ingredients-card,
+.instructions-card {
   overflow: scroll;
   width: 50vw;
   height: 50vh;
@@ -111,7 +127,7 @@ main {
   background-image: url('https://i.pinimg.com/originals/d9/fe/7d/d9fe7da77a86635547ad1e7c71e5d74e.png');
   background: no-repeat fixed cover;
   background-blend-mode: multiply;
-  margin-top: 5%;
+  margin-bottom: 5%;
   margin-inline: auto;
   padding: 20px;
   border-radius: 30px;
@@ -119,7 +135,9 @@ main {
   border: 1px dashed var(--color-light);
 }
 
-.card li {
+.ingredients-card li,
+.instructions-card li,
+h2 {
   color: var(--color-light);
   text-align: left;
   margin-left: 8%;
@@ -127,25 +145,30 @@ main {
 }
 
 ul {
-  list-style-type: square;
+  list-style-type: none; /* removing bullets disrupts design; added dashes to html*/
 }
 
-hr {
+footer {
   border-top: 1px dashed;
-  border-bottom: none;
   width: 40%;
-  margin: 2rem auto;
+  padding: 10px;
+  margin: auto;
 }
 
 a:hover {
   color: rgb(101, 72, 2);
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (min-width: 1000px) {
   #front-page {
-    margin-top: 0;
+    position: relative;
+    inset-block-start: -2rem;
   }
   #front-page p {
-    margin-top: 10%;
+    font-size: 1.5rem !important;
+  }
+
+  h1 {
+    margin-bottom: 30px;
   }
 }

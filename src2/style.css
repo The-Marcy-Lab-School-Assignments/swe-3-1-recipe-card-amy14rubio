@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=Bevan:ital@0;1&display=swap');
+
+:root {
+  --color-bg: #bac98f;
+  --color-accent: #804a1b;
+  --color-highlight: #c2dc78;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.5s ease-in-out;
+}
+
+body {
+  background-color: var(--color-bg);
+  font-family: 'Baskervville', serif;
+  font-weight: 400;
+  text-align: center;
+  color: black;
+}
+
+header {
+  display: flex;
+  margin: 2rem;
+  flex-direction: column;
+  justify-content: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+li a {
+  color: var(--color-accent);
+  margin-right: 20px;
+  padding: 2px;
+  border-radius: 8px;
+}
+
+.nav-page {
+  background-color: var(--color-highlight);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+h1 {
+  color: var(--color-accent);
+  font-family: 'Bevan', serif;
+  margin-bottom: 1rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 50vw;
+  margin: auto;
+}
+
+#front-page p {
+  border-left: 5px solid var(--color-accent); /* adding border-left disrupts design*/
+}
+
+#front-page p,
+.ingredients-card,
+.instructions-card {
+  background-color: white;
+  text-align: left;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  color: var(--color-accent);
+  border-bottom: 1px solid var(--color-accent);
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+.ingredients-card li {
+  background-color: var(--color-highlight);
+  margin-bottom: 5px;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.instructions-card li {
+  border-radius: 3px;
+  padding: 5px;
+  margin-left: 15px;
+}
+
+img {
+  border-radius: 15px;
+  object-fit: contain;
+  border: 1px solid var(--color-accent);
+}
+
+#figcaption {
+  font-style: italic;
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  max-width: 35vw;
+  margin: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+footer {
+  border-top: 1px solid var(--color-accent);
+  padding: 20px;
+  max-width: 50vw;
+  margin: auto;
+}
