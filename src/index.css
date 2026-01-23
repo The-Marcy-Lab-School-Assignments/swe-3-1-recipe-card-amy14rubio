@@ -1,16 +1,174 @@
-/* CSS Reset */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Scribble&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+@keyframes wave {
+  0%,
+  100% {
+    transform: translateY(2px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+:root {
+  --color-dark: rgb(183, 134, 95);
+  --color-light: rgb(231, 208, 182);
+  --color-bg-blend: rgb(187, 158, 136);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-align: center;
+  transition: all 1s ease-in-out;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  max-width: 100vw;
+  margin: auto;
+  background-color: var(--color-light);
+  font-family: 'Sour Gummy', sans-serif;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 3.5rem;
+  background-color: var(--color-dark);
+  list-style-type: none;
+  margin-bottom: 2rem;
+}
+
+li a {
+  display: flex;
+  align-items: center;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  height: 100%;
+  margin-right: 0; /*adding margin-right disrupts li:a hover design*/
+  padding: 0 2rem;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+
+a {
+  color: var(--color-dark);
+}
+
+h1 {
+  font-family: 'Rubik Scribble', system-ui;
+  font-size: 4rem;
+  animation: wave 4s ease-in-out infinite;
+}
+
+h1:hover {
+  letter-spacing: 3px;
+}
+
+main {
+  display: block;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+#front-page {
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+#front-page p {
+  text-align: right;
+  font-size: 0.95rem;
+  padding: 1rem;
+  border-left: none; /* adding border-left disrupts design*/
+}
+
+#front-page img {
+  margin-bottom: 1rem;
+  clip-path: circle(55% at 30% 55%);
+}
+
+#front-page figure {
+  display: flex;
+  flex-direction: column;
+  max-width: 25vw;
+}
+
+#front-page img:hover,
+#front-page p:hover,
+#front-page figcaption:hover,
+.ingredients-card li:hover,
+.instructions-card li:hover,
+h2:hover {
+  transform: scale(1.05);
+}
+
+#figcaption {
+  font-style: italic;
+}
+
+.ingredients-card,
+.instructions-card {
+  overflow: scroll;
+  width: 50vw;
+  height: 50vh;
+  background-color: var(--color-bg-blend);
+  background-image: url('https://i.pinimg.com/originals/d9/fe/7d/d9fe7da77a86635547ad1e7c71e5d74e.png');
+  background: no-repeat fixed cover;
+  background-blend-mode: multiply;
+  margin-bottom: 5%;
+  margin-inline: auto;
+  padding: 20px;
+  border-radius: 30px;
+  font-size: 1.25rem;
+  border: 1px dashed var(--color-light);
+}
+
+.ingredients-card li,
+.instructions-card li,
+h2 {
+  color: var(--color-light);
+  text-align: left;
+  margin-left: 8%;
+  padding: 0.75rem;
 }
 
 ul {
-  list-style: none;
+  list-style-type: none; /* removing bullets disrupts design; added dashes to html*/
 }
 
-img {
-  width: 100%;
+footer {
+  border-top: 1px dashed;
+  width: 40%;
+  padding: 10px;
+  margin: auto;
 }
 
-/* Add your CSS below */
+a:hover {
+  color: rgb(101, 72, 2);
+}
+
+@media screen and (min-width: 1000px) {
+  #front-page {
+    position: relative;
+    inset-block-start: -2rem;
+  }
+  #front-page p {
+    font-size: 1.5rem !important;
+  }
+
+  h1 {
+    margin-bottom: 30px;
+  }
+}
